@@ -121,11 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
             deleteBtn.className = "delete-participant-btn";
             deleteBtn.innerHTML = "✕";
             deleteBtn.type = "button";
+            console.log("Delete button created for:", p);
             deleteBtn.onclick = async (e) => {
               e.preventDefault();
+              console.log("Delete button clicked for:", p);
               await removeParticipant(name, p);
             };
             li.appendChild(deleteBtn);
+            console.log("Delete button appended to participant item");
             
             participantsListEl.appendChild(li);
           });
